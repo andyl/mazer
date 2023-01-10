@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby 
+
+require_relative "../lib/grid"
+require_relative "../lib/sidewinder" 
+
+grid = Grid.new(20, 20)
+Sidewinder.on(grid)
+
+puts grid
+
+img = grid.to_png 
+img.save "/tmp/grid.png"
+
+system "gio open /tmp/grid.png"
